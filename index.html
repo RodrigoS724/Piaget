@@ -29,6 +29,7 @@
     .slide-image { position:absolute; inset:0 0 0 52%; overflow:hidden; } .slide-image:after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,var(--forest) 0%,rgba(14,40,37,.44) 42%,rgba(14,40,37,.18) 100%); } .slide-image img { width:100%; height:100%; object-fit:cover; object-position:center; filter:grayscale(.18) contrast(1.04); opacity:.78; }
     .slide-content { position:relative; z-index:1; max-width:650px; padding:125px 0 80px; } .slide-content h1 { font-size:clamp(3rem,7vw,6.2rem); } .slide-content p { max-width:590px; } .slide-note { display:inline-block; margin-top:15px; padding:8px 11px; background:rgba(244,200,101,.14); border:1px solid rgba(244,200,101,.5); color:#fff1ce; font:500 .72rem "DM Mono",monospace; letter-spacing:.04em; }
     .slider-controls { position:absolute; z-index:2; bottom:35px; left:50%; transform:translateX(-50%); width:min(1120px,calc(100% - 40px)); display:flex; align-items:center; justify-content:space-between; pointer-events:none; } .slider-dots { display:flex; gap:8px; pointer-events:auto; } .slider-dot { width:10px; height:10px; padding:0; border:1px solid rgba(255,255,255,.75); border-radius:50%; background:transparent; cursor:pointer; } .slider-dot.active { background:var(--yellow); border-color:var(--yellow); } .slider-arrows { display:flex; gap:9px; pointer-events:auto; } .slider-arrow { width:38px; height:38px; border:1px solid rgba(255,255,255,.65); background:rgba(14,40,37,.45); color:white; font-size:1.2rem; cursor:pointer; } .slider-arrow:hover { background:var(--yellow); color:var(--forest); border-color:var(--yellow); } .fullscreen-button { width:auto; padding:0 12px; font:500 .69rem "DM Mono",monospace; letter-spacing:.04em; } .slide-count { color:#d9e6dd; font:500 .72rem "DM Mono",monospace; } .hero:fullscreen,.hero:-webkit-full-screen { width:100%; height:100%; } .hero:fullscreen .hero-carousel,.hero:-webkit-full-screen .hero-carousel { min-height:100%; }
+    .lofi-toggle { position:fixed; right:22px; bottom:22px; z-index:10; display:flex; align-items:center; gap:9px; padding:10px 14px; border:1px solid rgba(24,59,55,.25); border-radius:999px; background:var(--paper); box-shadow:0 7px 20px rgba(24,59,55,.16); color:var(--forest); font:500 .72rem "DM Mono",monospace; letter-spacing:.03em; cursor:pointer; } .lofi-toggle:hover { background:var(--yellow); } .lofi-indicator { width:8px; height:8px; border-radius:50%; background:#78948a; } .lofi-toggle.playing .lofi-indicator { background:var(--orange); box-shadow:0 0 0 5px rgba(238,143,67,.18); animation:pulse 1.3s infinite; } @keyframes pulse { 50% { transform:scale(1.35); opacity:.55; } }
     section { padding:100px 0; } .section-heading { display:flex; align-items:end; justify-content:space-between; gap:32px; margin-bottom:42px; } h2 { font-size:clamp(2.3rem,4vw,3.8rem); letter-spacing:-.055em; max-width:700px; } .section-heading p { max-width:340px; margin:0; color:var(--muted); font-size:.94rem; }
     .bio { background:var(--paper); } .bio-grid { display:grid; grid-template-columns:1fr 1.35fr; gap:70px; } .lead { font:500 1.27rem/1.5 Fraunces,serif; } .bio-text p { color:#3f5651; margin-top:0; }
     .timeline { margin:0; padding:0; list-style:none; border-left:1px solid var(--line); } .timeline li { padding:0 0 27px 27px; position:relative; color:#425953; } .timeline li:before { content:""; width:9px; height:9px; position:absolute; border-radius:50%; left:-5px; top:8px; background:var(--orange); } .timeline strong { color:var(--ink); display:block; font-size:.96rem; }
@@ -43,7 +44,7 @@
     .game-board { text-align:center; } .hangman { font-family:"DM Mono",monospace; color:var(--yellow); white-space:pre; min-height:184px; display:flex; align-items:center; justify-content:center; font-size:1.05rem; line-height:1.1; margin-top:-16px; } .word { min-height:43px; letter-spacing:.28em; font:500 clamp(1.4rem,3vw,2rem) "DM Mono",monospace; color:white; margin-bottom:14px; } .clue { color:#c9d8ce; font-size:.88rem; min-height:27px; } .keyboard { display:flex; flex-wrap:wrap; justify-content:center; gap:7px; margin:18px auto 15px; max-width:420px; } .key { border:0; border-radius:3px; width:32px; height:32px; font:500 .77rem "DM Mono",monospace; cursor:pointer; color:var(--forest); background:#f8f3e9; } .key:hover:not(:disabled) { background:var(--yellow); transform:translateY(-1px); } .key:disabled { opacity:.35; cursor:default; } .key.hit { background:#84b39b; opacity:1; } .key.miss { background:#dc8351; opacity:1; } .game-status { font-size:.84rem; color:#f3d18d; min-height:24px; } .new-game { padding:10px 16px; border:1px solid var(--yellow); background:transparent; color:var(--yellow); cursor:pointer; font:500 .75rem "DM Mono",monospace; text-transform:uppercase; letter-spacing:.07em; } .new-game:hover { background:var(--yellow); color:var(--forest); }
     .references { padding:72px 0; background:var(--paper); } .refs { columns:2; column-gap:50px; padding-left:20px; color:#50625c; font-size:.88rem; } .refs li { break-inside:avoid; margin-bottom:11px; } footer { background:var(--forest); color:#cbd8d0; text-align:center; font-size:.78rem; padding:25px; }
     @media (max-width:800px) { .navlinks { display:none; } .hero { min-height:100svh; } .hero-carousel { min-height:100svh; } .hero-grid,.bio-grid,.adapt,.game-shell { grid-template-columns:1fr; gap:35px; } .portrait { min-height:0; } .portrait img { height:330px; margin:auto; } .slide-image { inset:0; } .slide-image:after { background:linear-gradient(90deg,rgba(14,40,37,.9),rgba(14,40,37,.5)); } .slide-content { padding:120px 0 105px; max-width:590px; } .concept-grid,.school-grid,.criticisms .crit-list { grid-template-columns:1fr; } .processes,.stage-list { grid-template-columns:1fr 1fr; } .stage:nth-child(3) { border-left:1px solid rgba(255,255,255,.2); } .section-heading { display:block; } .section-heading p { margin-top:16px; } }
-    @media (max-width:500px) { section { padding:70px 0; } .container { width:min(100% - 28px,1120px); } .processes,.stage-list,.split-cards { grid-template-columns:1fr; } .stage { min-height:auto; border-right:1px solid rgba(255,255,255,.2); } .refs { columns:1; } .hero-grid { padding-top:100px; } }
+    @media (max-width:500px) { section { padding:70px 0; } .container { width:min(100% - 28px,1120px); } .processes,.stage-list,.split-cards { grid-template-columns:1fr; } .stage { min-height:auto; border-right:1px solid rgba(255,255,255,.2); } .refs { columns:1; } .hero-grid { padding-top:100px; } .fullscreen-button { display:none; } .lofi-toggle { right:14px; bottom:14px; } }
   </style>
 </head>
 <body>
@@ -70,6 +71,7 @@
     <section class="game" id="juego"><div class="container"><div class="section-heading"><div><div class="eyebrow">07 · Pausa para jugar</div><h2>El ahorcado de Piaget</h2></div><p>Una forma breve de repasar los conceptos de la teoría.</p></div><div class="game-shell"><div class="game-copy"><div class="eyebrow" style="color:var(--yellow)">Anfitrión del juego</div><h2>¿Qué concepto está pensando Piaget?</h2><p>Elige letras para descubrir una palabra clave. Tienes seis intentos antes de que la figura esté completa.</p><div class="host"><div class="host-badge">P</div><div><strong>Jean Piaget</strong><small>“El conocimiento se construye.”</small></div></div></div><div class="game-board"><div class="hangman" id="drawing" aria-label="Dibujo del ahorcado"></div><div class="word" id="word" aria-live="polite"></div><div class="clue" id="clue"></div><div class="keyboard" id="keyboard" aria-label="Teclado del juego"></div><div class="game-status" id="status" aria-live="polite"></div><button class="new-game" id="newGame">Nueva palabra</button></div></div></div></section>
     <section class="references"><div class="container"><div class="eyebrow">Referencias</div><h2 style="font-size:2.2rem;margin:8px 0 26px">Para seguir explorando</h2><ol class="refs"><li>Ausubel, D. P., Novak, J. D., & Hanesian, H. (1983). <em>Psicología educativa: Un punto de vista cognoscitivo</em> (2ª ed.). Trillas.</li><li>Bruner, J. S. (1988). <em>Desarrollo cognitivo y educación</em>. Morata.</li><li>Carretero, M. (2009). <em>Constructivismo y educación</em>. Paidós.</li><li>Castilla Pérez, M. F. (2014). <em>La teoría del desarrollo cognitivo de Piaget aplicada en la clase de primaria</em>. Universidad de Valladolid.</li><li>Meece, J. (2000). <em>Desarrollo del niño y del adolescente</em>. SEP / McGraw-Hill.</li><li>Piaget, J. (1972). <em>Seis estudios de psicología</em>. Seix Barral.</li><li>Piaget, J. (1980). <em>Teoría del desarrollo cognitivo</em>. Centro Internacional de Epistemología Genética.</li><li>Pozo, J. I. (2006). <em>Teorías cognitivas del aprendizaje</em> (9ª ed.). Morata.</li><li>Vygotsky, L. S. (1978). <em>El desarrollo de los procesos psicológicos superiores</em>. Crítica.</li></ol></div></section>
   </main><footer>Jean Piaget · Estructuras cognitivas y desarrollo intelectual</footer>
+  <button class="lofi-toggle" id="lofiToggle" type="button" aria-pressed="false" aria-label="Activar música lo-fi de fondo"><span class="lofi-indicator"></span><span id="lofiLabel">Activar lo-fi</span></button>
   <script>
     const slides = [...document.querySelectorAll('.hero-slide')];
     const dots = document.querySelector('.slider-dots');
@@ -118,15 +120,70 @@
     document.querySelector('.hero-carousel').addEventListener('mouseleave', restartSlider);
     restartSlider();
 
+    const lofiToggle = document.getElementById('lofiToggle');
+    const lofiLabel = document.getElementById('lofiLabel');
+    let lofiContext, lofiMaster, lofiTimer, lofiStep = 0, lofiPlaying = false;
+    const lofiChords = [[130.81,155.56,196], [116.54,146.83,174.61], [110,130.81,164.81], [123.47,146.83,185]];
+    function lofiTone(frequency, time, duration, volume, wave = 'sine') {
+      const oscillator = lofiContext.createOscillator();
+      const filter = lofiContext.createBiquadFilter();
+      const gain = lofiContext.createGain();
+      oscillator.type = wave;
+      oscillator.frequency.setValueAtTime(frequency, time);
+      filter.type = 'lowpass'; filter.frequency.value = 1100;
+      gain.gain.setValueAtTime(0.0001, time);
+      gain.gain.exponentialRampToValueAtTime(volume, time + .025);
+      gain.gain.exponentialRampToValueAtTime(0.0001, time + duration);
+      oscillator.connect(filter).connect(gain).connect(lofiMaster);
+      oscillator.start(time); oscillator.stop(time + duration + .03);
+    }
+    function lofiNoise(time, volume, high = false) {
+      const buffer = lofiContext.createBuffer(1, lofiContext.sampleRate * .12, lofiContext.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
+      const source = lofiContext.createBufferSource();
+      const filter = lofiContext.createBiquadFilter();
+      const gain = lofiContext.createGain();
+      filter.type = high ? 'highpass' : 'bandpass'; filter.frequency.value = high ? 6500 : 1600;
+      gain.gain.setValueAtTime(volume, time); gain.gain.exponentialRampToValueAtTime(.0001, time + .11);
+      source.connect(filter).connect(gain).connect(lofiMaster); source.start(time);
+    }
+    function scheduleLofiStep() {
+      const time = lofiContext.currentTime + .05;
+      const beat = lofiStep % 8;
+      if (beat === 0) lofiChords[(lofiStep / 8) % lofiChords.length].forEach(note => lofiTone(note, time, 1.7, .045));
+      if (beat === 0 || beat === 4) { lofiTone(92, time, .23, .14); lofiTone(48, time + .02, .18, .11); }
+      if (beat === 2 || beat === 6) lofiNoise(time, .055);
+      if (beat % 2 === 1) lofiNoise(time, .018, true);
+      if (beat === 1 || beat === 5) lofiTone([392,349.23,293.66,329.63][(lofiStep / 8) % 4], time, .25, .025, 'triangle');
+      lofiStep++;
+    }
+    async function toggleLofi() {
+      if (!lofiContext) {
+        lofiContext = new (window.AudioContext || window.webkitAudioContext)();
+        lofiMaster = lofiContext.createGain(); lofiMaster.gain.value = .55; lofiMaster.connect(lofiContext.destination);
+      }
+      if (lofiPlaying) {
+        clearInterval(lofiTimer); lofiMaster.gain.setTargetAtTime(.0001, lofiContext.currentTime, .06); lofiPlaying = false;
+      } else {
+        await lofiContext.resume(); lofiMaster.gain.setTargetAtTime(.55, lofiContext.currentTime, .08);
+        scheduleLofiStep(); lofiTimer = setInterval(scheduleLofiStep, 430); lofiPlaying = true;
+      }
+      lofiToggle.classList.toggle('playing', lofiPlaying); lofiToggle.setAttribute('aria-pressed', String(lofiPlaying));
+      lofiToggle.setAttribute('aria-label', lofiPlaying ? 'Pausar música lo-fi de fondo' : 'Activar música lo-fi de fondo');
+      lofiLabel.textContent = lofiPlaying ? 'Pausar lo-fi' : 'Activar lo-fi';
+    }
+    lofiToggle.addEventListener('click', toggleLofi);
+
     const terms = [
-      { word:'ASIMILACION', clue:'Incorporar información nueva a un esquema previo.' },
-      { word:'ACOMODACION', clue:'Modificar un esquema a partir de una nueva experiencia.' },
-      { word:'EQUILIBRACION', clue:'Proceso que supera el conflicto cognitivo.' },
-      { word:'ESQUEMA', clue:'Unidad básica de las estructuras cognitivas.' },
-      { word:'REVERSIBILIDAD', clue:'Comprender que una transformación puede deshacerse.' },
-      { word:'CONSERVACION', clue:'Una cantidad permanece aunque cambie su apariencia.' },
-      { word:'EGOCENTRISMO', clue:'Dificultad para diferenciar la propia perspectiva de la ajena.' },
-      { word:'CONSTRUCTIVISMO', clue:'El conocimiento se construye activamente.' }
+      { word:'ACCION', clue:'Para Piaget, es el punto de partida del conocimiento.' },
+      { word:'JUEGO', clue:'Actividad clave para el desarrollo simbólico.' },
+      { word:'OBJETO', clue:'En el estadio sensoriomotor se construye su permanencia.' },
+      { word:'LOGICA', clue:'Caracteriza el pensamiento de las operaciones concretas.' },
+      { word:'ETAPA', clue:'Cada estadio del desarrollo es una de estas.' },
+      { word:'SERIE', clue:'Ordenar elementos por tamaño es un ejemplo de ella.' },
+      { word:'GRUPO', clue:'El intercambio entre iguales favorece el aprendizaje.' },
+      { word:'ORDEN', clue:'Los estadios aparecen siempre en el mismo.' }
     ];
     const parts = [
       ' +---+\n |   |\n     |\n     |\n     |\n     |\n=======',
